@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+
+        <!-- Room Walls -->
+        <a-entity 
+            geometry="primitive: box; width: 5; height: 5; depth: 0.1"
+            material="src: #wallTexture" position="0 0.5 -5">
+        </a-entity>
+        <a-entity 
+            geometry="primitive: box; width: 10; height: 5; depth: 0.1"
+            material="src: #wallTexture" position="0 0.7 -5">
+        </a-entity>
+        <a-entity 
+            geometry="primitive: box; width: 0.1; height: 5; depth: 10"
+            material="src: #wallTexture" position="0 0.5 -5" rotation="0 90 0">
+        </a-entity>
+        <a-entity 
+            geometry="primitive: box; width: 0.1; height: 5; depth: 10"
+            material="src: #wallTexture" position="0 0.5 -5" rotation="0 90 0">
+        </a-entity>
+
+        <!-- Floor -->
+        <a-entity 
+            geometry="primitive: plane; width: 10; height: 10" material="src: #floorTexture" rotation="-90 0 0"
+            position="0 0 0">
+        </a-entity>
+
+        <!-- Ceiling -->
+        <a-entity 
+            geometry="primitive: plane; width: 10; height: 10" material="color: #f0f0f0" rotation="90 0 0"
+            position="0 5 0">
+        </a-entity>
+
+        <!-- Table -->
+        <a-entity 
+            geometry="primitive: box; width: 2; height: 0.1; depth: 1" material="color: #654321"
+            position="0 1 2">
+        </a-entity>
+        <a-entity 
+            geometry="primitive: cylinder; radius: 0.1; height: 1" material="color: #654321"
+            position="0 0.5 2">
+        </a-entity>
+
+        <!-- Chair -->
+        <a-entity 
+            geometry="primitive: box; width: 0.5; height: 1; depth: 0.5" material="color: #4682b4"
+            position="2 0.5 -2">
+        </a-entity>
+        <a-entity 
+            geometry="primitive: box; width: 0.1; height: 0.6; depth: 0.1" material="color: #4682b4"
+            position="-2 1.3 -2">
+        </a-entity>
+        <a-entity  
+            geometry="primitive: box; width: 0.1; height: 0.6; depth: 0.1" material="color: #4682b4"
+            position="-1.8 1.3 -2">
+        </a-entity>
+
+        <!-- Lights -->
+        <a-entity light="type: ambient; color: #ffffff; intensity: 0.5"></a-entity>
+        <a-entity light="type: directional; color: #ffffff; intensity: 0.8; castShadow: true" position="-1 3 1"></a-entity>
+
+        <!-- Camera -->
+        <a-entity position="0 2 4">
+            <a-camera></a-camera>
+        </a-entity>
+
+        <!-- Textures -->
+        <a-assets>
+            <img id="wallTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+            <img id="floorTexture" src="https://cdn.aframe.io/a-painter/images/wall.jpg">
+        </a-assets>
+
+    </a-scene>
+</body>
+
+</html>
+
